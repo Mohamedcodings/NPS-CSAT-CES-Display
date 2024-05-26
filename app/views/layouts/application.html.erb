@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey Display App</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "custom", media: "all" %>
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+  <div id="doc">
+    <header id="hd">
+      <h1>Survey Display App</h1>
+    </header>
+
+    <section id="upload-section">
+      <h2>Upload Surveys</h2>
+      <%= form_with url: surveys_path, local: true, method: :post, multipart: true do %>
+        <div class="form-group">
+          <%= file_field_tag :file %>
+        </div>
+        <div class="form-group">
+          <%= submit_tag 'Upload' %>
+        </div>
+      <% end %>
+    </section>
+
+    <div id="messages">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    </div>
+
+    <main id="bd">
+      <h2 id="uploaded-surveys-header">Uploaded Surveys</h2>
+      <div id="yui-main">
+        <div class="survey-container">
+          <h3>NPS Surveys</h3>
+          <p>NPS Score: <%= @nps_score %></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Survey Type</th>
+                <th>Score</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @nps_surveys.each do |survey| %>
+                <tr>
+                  <td><%= survey.survey_type %></td>
+                  <td><%= survey.score %></td>
+                  <td><%= survey.timestamp %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="survey-container">
+          <h3>CSAT Surveys</h3>
+          <p>CSAT Score: <%= @csat_score %></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Survey Type</th>
+                <th>Score</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @csat_surveys.each do |survey| %>
+                <tr>
+                  <td><%= survey.survey_type %></td>
+                  <td><%= survey.score %></td>
+                  <td><%= survey.timestamp %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="survey-container">
+          <h3>CES Surveys</h3>
+          <p>CES Score: <%= @ces_score %></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Survey Type</th>
+                <th>Score</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @ces_surveys.each do |survey| %>
+                <tr>
+                  <td><%= survey.survey_type %></td>
+                  <td><%= survey.score %></td>
+                  <td><%= survey.timestamp %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer id="ft">
+      <p>Footer</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<h1>Uploaded Surveys</h1>
+
+<h2>NPS Surveys</h2>
+<p>NPS Score: <%= @nps_score %></p>
+<% @nps_score_counts.each do |score, count| %>
+  <p>Score <%= score %>: <%= count %></p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Survey Type</th>
+      <th>Score</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @nps_surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.survey_type %></td>
+        <td><%= survey.score %></td>
+        <td><%= survey.timestamp %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>CSAT Surveys</h2>
+<p>CSAT Score: <%= @csat_score %></p>
+<% @csat_score_counts.each do |score, count| %>
+  <p>Score <%= score %>: <%= count %></p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Survey Type</th>
+      <th>Score</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @csat_surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.survey_type %></td>
+        <td><%= survey.score %></td>
+        <td><%= survey.timestamp %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>CES Surveys</h2>
+<p>CES Score: <%= @ces_score %></p>
+<% @ces_score_counts.each do |score, count| %>
+  <p>Score <%= score %>: <%= count %></p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Survey Type</th>
+      <th>Score</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ces_surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.survey_type %></td>
+        <td><%= survey.score %></td>
+        <td><%= survey.timestamp %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Upload New Surveys', new_survey_path %>

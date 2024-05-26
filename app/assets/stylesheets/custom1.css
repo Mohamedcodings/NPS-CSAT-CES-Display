@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #doc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #hd, #ft {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #bd {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1200px;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  #upload-section {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #upload-section .form-group {
+    margin-bottom: 15px;
+  }
+  
+  #upload-section input[type="file"] {
+    padding: 5px;
+  }
+  
+  #upload-section input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #upload-section input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  #yui-main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  #yui-main .yui-g {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .survey-container {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 30%;
+    box-sizing: border-box;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
